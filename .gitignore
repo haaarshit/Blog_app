@@ -1,0 +1,6 @@
+# frontnend
+/frontnend/node_modules
+
+# backend
+node_modules
+/backend/config

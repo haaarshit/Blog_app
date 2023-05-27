@@ -1,0 +1,19 @@
+.footer{
+    max-width: 100%;
+    padding: 2vmax;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    h1{
+        font-size: 5vmax;
+        font-weight: 200;
+    }
+    .info{
+        text-align: center;
+        font-size: 18px;
+    }
+}

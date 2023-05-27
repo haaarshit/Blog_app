@@ -1,0 +1,118 @@
+
+
+/* navbar */
+// .overlay {
+//     height: 0;
+//     width: 100%;
+
+//     position: fixed;
+//     z-index: 9999;
+//     top: 0;
+//     left: 0;
+//     // background-color: hsl(219, 40%, 8%);
+//     background-image: linear-gradient(-45deg,#1c1c1cf8,#0f0e0ee0);
+//     overflow-x: hidden;
+//     transition: 0.5s;
+
+//     a {
+//         color: white;
+//         cursor: pointer;
+//         z-index: 1111;
+//     }
+
+
+//     .overlay-content {
+//         position: relative;
+//         top: 25%;
+//         width: 100%;
+//         text-align: center;
+//         margin-top: 30px;
+//         z-index: 1111111;
+
+//         .navlink {
+//             padding: 8px;
+//             text-decoration: none;
+//             font-size: 20px;
+//             color: #818181;
+//             display: block;
+//             transition: 0.3s;
+//             scale: 1;
+
+//         }
+//     }
+// }
+
+// .overlay::-webkit-scrollbar {
+//     display: none;
+// }
+
+
+// .overlay .navlink:hover,
+// .overlay .navlink:focus {
+//     color: #993ce0;
+//     color: #fff;
+// }
+
+// .overlay .closebtn {
+//     position: absolute;
+//     top: 20px;
+//     right: 45px;
+//     font-size: 60px;
+//     margin: 0px 10px;
+// }
+
+// .openbtn {
+//     margin: 10px 10px;
+//     position: fixed;
+//     top: 10px;
+//     z-index: 99999;
+//     color: white;
+// }
+
+
+// header
+.header{
+     max-width: 100%;
+     padding: 1vmax 3vmax;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     .logo{
+        font-size: 3vmax;
+     }
+     .login{
+        display: flex;
+        align-items: center;
+        a{
+            padding: 0.5vmax 1vmax;
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+            border-radius: 10px;
+            font-weight: 600;
+            outline: none;
+            border: 1px solid transparent;
+            transition: all 500ms;
+        }
+        a:hover{
+            
+            border: 1px solid rgba(0, 0, 0, 0.153);
+        }
+        img{
+            width: 40px;
+            aspect-ratio: 1/1;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+     }
+}
+
+
+@media screen  and (max-width:800px){
+    .header{
+        .logo{
+            font-size: 5vmax;
+        }
+    }
+}

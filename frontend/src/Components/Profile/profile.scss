@@ -1,0 +1,238 @@
+@mixin red-btn {
+
+    margin: 10px 0;
+    padding: 1vmax 1vmax;
+    font-size: 3vh;
+    background-color: rgb(208, 26, 26);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms;
+
+}
+
+.profile {
+
+    display: flex;
+    flex-direction: column;
+
+    .infobox {
+        display: flex;
+
+        .userinfo {
+            width: 100%;
+            padding: 3vmax;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 40%;
+                aspect-ratio: 1/1;
+                background-image: linear-gradient(45deg, rgba(25, 101, 215, 0.677), rgba(255, 0, 115, 0.233));
+                border-radius: 50%;
+                margin: 10px 0;
+            }
+
+            .name {
+                font-size: 30px;
+            }
+
+            button {
+                @include red-btn();
+            }
+
+            button:hover {
+                background-color: #bb6565;
+            }
+        }
+
+        .userstats {
+            border-left: 1px solid black;
+            padding: 3vmax;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+
+            .postcount {
+                max-width: 100%;
+                text-align: center;
+                font-size: 2vmax;
+                padding: 2vmax;
+
+                h2 {
+                    font-size: 3vmax;
+                }
+            }
+
+            .addPost {
+                padding: 2vmax;
+                font-size: 2vmax;
+
+                a {
+                    padding: 1vmax 1vmax;
+                    font-size: 3vh;
+                    background-color: black;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: all 300ms;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    color: black;
+                    background-color: #fff;
+                    border: 1px solid black;
+                }
+
+            }
+
+
+        }
+    }
+
+    .profileposts {
+        text-align: center;
+        padding: 2vmax;
+
+        h1 {
+            font-size: 5vmax;
+        }
+
+        div {
+            padding: 2vmax;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            .profilepost {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: black;
+                margin: 10px 10px;
+                border: 1px solid rgba(0, 0, 0, 0.205);
+                padding: 2vmax;
+                width: 25%;
+                transition: all 200ms;
+                text-decoration: none;
+             a{
+                text-decoration: none;
+                color: black;
+                // color
+                img {
+                    margin: 10px 0;
+                    width: 50%;
+                    aspect-ratio: 1/1;
+                }
+
+                h1 {
+                    font-size: 20px;
+                    margin: 4px 0;
+                }
+            }
+
+                button {
+                    @include red-btn();
+                }
+
+                button:hover {
+                    background-color: #bb6565;
+                }
+            }
+
+            .profilepost:hover {
+                box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+                border: solid transparent;
+            }
+        }
+    }
+}
+
+.pleaselogin {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width:850px) {
+    .profile {
+
+        .infobox {
+
+
+            .userstats {
+                .postcount {
+                    font-size: 4vmax;
+
+                    h2 {
+                        font-size: 4vmax;
+                    }
+                }
+
+                .addPost {
+                    a {
+                        padding: 2vmax;
+                    }
+                }
+            }
+        }
+
+        .profileposts{
+            div{
+                a{
+                    width: 40%;
+                }
+                .profilepost{
+                    width: 60%;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .profile {
+        .infobox{
+            flex-direction: column;
+            .userinfo{
+                padding: 0;
+            }
+            .userstats{
+                padding: 0;
+            }
+        }
+        .profileposts{
+            div{
+                a{
+                    width: 100%;
+                }
+                .profilepost{
+                    width: 100%;
+                    a{
+                        img{
+                            width: 80%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
