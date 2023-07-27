@@ -7,16 +7,12 @@ import Loading from '../Loading/Loading'
 import Login from '../Login/Login'
 
 function Post() {
-
-
   const dispatch = useDispatch()
   const { id } = useParams()
   const { post, loading } = useSelector(state => state.singlePost)
   const { isAuthenticated } = useSelector(state => state.userProfile)
 
   useEffect(() => {
-
-
     dispatch(getPost(id))
     console.log(post)
     console.log(loading)
@@ -24,12 +20,7 @@ function Post() {
   return (
     isAuthenticated ?
       <>
-
-
         {
-
-
-
           loading ?
             <Loading />
             :

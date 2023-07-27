@@ -24,9 +24,14 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.user-posts .heading .info img {
+  width: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
 }
 .user-posts .heading .info p {
-  font-size: 1.5rem;
   margin: 0 10px;
 }
 .user-posts .heading .info p:nth-child(1) {
@@ -40,4 +45,56 @@
   text-align: justify;
   word-spacing: 6px;
   line-height: 40px;
+}
+.user-posts .userInfo {
+  padding: 2vmax;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: black;
+  align-items: center;
+  justify-content: center;
+}
+.user-posts .userInfo h1 {
+  margin: 2vmax;
+}
+.user-posts .userInfo img {
+  background-image: linear-gradient(45deg, rgb(55, 127, 186), rgb(75, 101, 173));
+  width: 100px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  transition: all 1s;
+}
+.user-posts .userInfo img:hover {
+  background-image: linear-gradient(135deg, rgb(0, 0, 0), rgb(106, 99, 99));
+}
+.user-posts .userInfo .info {
+  width: 100%;
+  text-align: center;
+}
+.user-posts .userInfo .info h2 {
+  font-weight: 500;
+}
+.user-posts .userInfo .info span {
+  font-weight: 500;
+}
+.user-posts .userInfo .info span h3 {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .user-posts {
+    padding: 0;
+  }
+  .user-posts .heading h1 {
+    text-align: justify;
+  }
+}
+@media screen and (max-width: 340px) {
+  .user-posts {
+    padding: 0;
+  }
+  .user-posts .heading .info {
+    flex-direction: column;
+  }
 }

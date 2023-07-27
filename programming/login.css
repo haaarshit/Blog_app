@@ -73,6 +73,13 @@
   font-size: 0.7em;
   color: rgba(0, 0, 0, 0.426);
 }
+.login-form .form form .input-field img {
+  height: 40px;
+  aspect-ratio: 1/1;
+}
+.login-form .form form .img-input {
+  flex-direction: row;
+}
 .login-form .form form button {
   padding: 1vmax 2vmax;
   outline: none;
@@ -93,5 +100,11 @@
 @media screen and (max-width: 550px) {
   .login-form .form {
     min-width: 80%;
+  }
+  .login-form .form form .img-input {
+    flex-direction: column;
+  }
+  .login-form .form form .img-input img {
+    height: 100px;
   }
 }

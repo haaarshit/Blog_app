@@ -6,7 +6,6 @@ import PostModel from "../model/post.js"
 // User
 // register controller
 export const register = async (req, res) => {
-
     try {
         const { name, email, password, avatar } = req.body
         const salt = await bcrypt.genSalt(10)
@@ -49,8 +48,6 @@ export const login = async (req, res) => {
             })
         }
 
-
-
         const hashPass = user.password
         const isValid = await bcrypt.compare(password, hashPass);
         if (!isValid) {
@@ -64,8 +61,6 @@ export const login = async (req, res) => {
             success: true,
             message: "login success full"
         })
-
-
     }
     catch (err) {
         res.status(400).json({
@@ -78,7 +73,7 @@ export const login = async (req, res) => {
 export const logout = async (req, res) => {
     try {
         const token = null
-         res.status(200).cookie("token", token, {
+        res.status(200).cookie("token", token, {
             expires: new Date(Date.now())
         }).json({
             success: true,
@@ -96,7 +91,7 @@ export const logout = async (req, res) => {
 // getuser data
 export const getProfile = async (req, res) => {
     const user = req.user
-    const posts = await PostModel.find({ user: user._id }).sort({createdAt:-1})
+    const posts = await PostModel.find({ user: user._id }).sort({ createdAt: -1 })
 
     return res.status(200).json({
         user: user,
@@ -109,12 +104,12 @@ export const getUser = async (req, res) => {
     const { id } = req.params
     try {
         const user = await UserModel.findOne({ _id: id }).select({ password: 0 })
-        const posts = await PostModel.find({user:id}).sort({createdAt:-1})
+        const posts = await PostModel.find({ user: id }).sort({ createdAt: -1 })
         if (user) {
             return res.status(200).json({
                 success: true,
                 user: user,
-                posts:posts
+                posts: posts
             })
         }
     }
@@ -223,6 +218,11 @@ export const updatePost = async (req, res) => {
                 post: post
             })
         }
+        else{
+            res.status(401).json({
+            message:"Can't update this post"
+            })
+        }
     } catch (error) {
         res.status(400).json({
             message: error.message,
@@ -231,13 +231,13 @@ export const updatePost = async (req, res) => {
 }
 
 // deletepost
-export const deletepost = async(req,res)=>{
-    const {id} = req.params
+export const deletepost = async (req, res) => {
+    const { id } = req.params
     try {
-        const data =await PostModel.deleteOne({_id:id})
+        const data = await PostModel.deleteOne({ _id: id })
         res.status(200).json({
-            message:"post deleted",
-            success:true,
+            message: "post deleted",
+            success: true,
             data
         })
     } catch (error) {
@@ -250,7 +250,7 @@ export const deletepost = async(req,res)=>{
 // get all post
 export const allPosts = async (req, res) => {
     try {
-        const posts = await PostModel.find({}).sort({createdAt:-1})
+        const posts = await PostModel.find({}).sort({ createdAt: -1 })
         res.status(200).json({
             posts: posts
         })
@@ -266,10 +266,10 @@ export const post = async (req, res) => {
     const { post_id } = req.params
     try {
         const post = await PostModel.findOne({ _id: post_id })
-        const user = await UserModel.findOne({_id:post.user})
+        const user = await UserModel.findOne({ _id: post.user })
         res.status(200).json({
             post: post,
-            user:user
+            user: user
         })
     } catch (error) {
         res.status(400).json({

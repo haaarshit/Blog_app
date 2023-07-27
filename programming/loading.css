@@ -3,4 +3,36 @@
   height: 100vh;
   width: 100%;
   background-color: #fff;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading .circle {
+  height: 20vh;
+  aspect-ratio: 1/1;
+  position: relative;
+  background-color: #000;
+  border-radius: 50%;
+}
+.loading .circle .line {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 20vh;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  background-color: #fff;
+  position: absolute;
+  animation: loading 1s infinite linear;
+}
+@keyframes loading {
+  from {
+    left: 0vh;
+    scale: 0.1;
+  }
+  to {
+    left: 20vh;
+    scale: 1;
+  }
 }

@@ -16,21 +16,18 @@ function User() {
     }, [])
     
     const isLoggedUser = ()=>{
-        
         if (mydata.user._id == userdata.user._id) {
             navigate('/profile')
         }
    }
 
     return <>
-
         {
             loading ?
                 <Loading />
                 :
                 userdata &&
                 (
-                    
                     <div className="profile" onLoad={isLoggedUser}>
                         <div className='infobox'>
                             <div className="userinfo">

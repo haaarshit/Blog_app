@@ -182,9 +182,6 @@ async(dispatch)=>{
     }
 }
 
-
-
-
 // get user
 export const getUser = (id)=>
 async(dispatch)=>{

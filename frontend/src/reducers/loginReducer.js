@@ -4,7 +4,7 @@ const loginReducer = createSlice({
     name:"loginReducer",
     initialState:{},
     reducers:{
-        // login
+        // login 
         loginRequest(state){
             state.isAuthenticated = false,
             state.loading = true
