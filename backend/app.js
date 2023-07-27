@@ -32,13 +32,14 @@ app.use(router)
 
 if (process.env.App_status === "production") {
 
-  app.use(express.static(path.resolve("./frontend/dist")));
+  app.use(express.static(path.resolve("../frontend/dist")));
   app.get("*", (req, res) => {
-      res.sendFile(path.resolve("./frontend/dist/index.html"),function (err) {
+      res.sendFile(path.resolve("../frontend/dist/index.html"),function (err) {
           if(err) {
               res.status(500).send(err)
           }
       });
   })
 }
+
 export default app
