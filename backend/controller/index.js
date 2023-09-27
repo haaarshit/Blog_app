@@ -19,8 +19,11 @@ export const register = async (req, res) => {
                 url: avatar
             }
         })
+
         await user.save()
+        
         const token = jwt.sign({ email: user.email, password: user.password }, process.env.JWT_Secret)
+      
         return res.status(200).cookie("token", token).json({
             success: true,
             message: "User successfully registered"
@@ -50,6 +53,7 @@ export const login = async (req, res) => {
 
         const hashPass = user.password
         const isValid = await bcrypt.compare(password, hashPass);
+
         if (!isValid) {
             return res.status(400).json({
                 success: false,
@@ -69,6 +73,7 @@ export const login = async (req, res) => {
         })
     }
 }
+
 // login controller
 export const logout = async (req, res) => {
     try {

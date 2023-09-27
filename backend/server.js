@@ -11,5 +11,5 @@ connectdb()
 
 
 app.listen(PORT,()=>{
-    console.log("Server is listening on port number "+ PORT)
+    console.log("Serve is running successfully")
 })

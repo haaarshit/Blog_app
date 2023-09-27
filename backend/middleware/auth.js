@@ -12,10 +12,12 @@ const isAuthenticated = async (req, res, next) => {
                 next()
             }
             else {
+                // if user not found 
                 res.status(401).send({ message: "Unautherized" })
             }
         } 
         else {
+            // if token not found in cookie
             res.status(401).send({ message: "please login or create id" })
         }
     }
