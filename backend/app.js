@@ -25,17 +25,5 @@ app.use(router)
 
 
 
-// if (process.env.NODE_ENV === "production") {
-//   // app.use(express.static(path.resolve(__dirname,'frontend','dist')));
-//    app.use(express.static('../frontend/dist/index.html'))
-//   app.get("*", (req, res) => {
-//       // res.sendFile(path.resolve(__dirname,'frontend','dist','index.html'),function (err) {
-//       //     if(err) {
-//       //         res.status(500).send(err)
-//       //     }
-//       // });
-//       app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, '../frontend', 'dist','index.html')));
-//   })
-// }
 
 export default app
