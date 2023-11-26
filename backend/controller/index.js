@@ -11,6 +11,8 @@ export const register = async (req, res) => {
         const salt = await bcrypt.genSalt(10)
         const haspass = await bcrypt.hash(password, salt)
 
+        if(!name || !email || !password || !avatar) return res.status(400).json({message:"all fields are required",success:false})
+
         const user = await new UserModel({
             name: name,
             email: email,
